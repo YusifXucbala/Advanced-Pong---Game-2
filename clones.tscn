@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://hhid547ipe2q"]
+
+[ext_resource type="Script" uid="uid://b10iefs6jo2ia" path="res://clones.gd" id="1_8lduh"]
+[ext_resource type="Texture2D" uid="uid://bwrkodwqqxkfg" path="res://Screenshot 2026-08-02 162016.png" id="1_wvhi8"]
+[ext_resource type="AudioStream" uid="uid://dlyp5acte2knq" path="res://freesound_gamestudio-rpg-sword-attack-combo-13-388926.mp3" id="3_wllkk"]
+
+[sub_resource type="Shader" id="Shader_wvhi8"]
+resource_local_to_scene = true
+code = "shader_type canvas_item;
+
+void fragment() {
+    vec4 col = texture(TEXTURE, UV);
+    // If pixel is near white, make it transparent
+    if (col.r > 0.9 && col.g > 0.9 && col.b > 0.9) {
+        col.a = 0.0;
+    }
+    COLOR = col;
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8lduh"]
+shader = SubResource("Shader_wvhi8")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5746c"]
+size = Vector2(32, 32)
+
+[node name="Clones" type="Area2D" unique_id=424791709]
+script = ExtResource("1_8lduh")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1067095078]
+material = SubResource("ShaderMaterial_8lduh")
+position = Vector2(576, 320)
+scale = Vector2(0.043956105, 0.048411466)
+texture = ExtResource("1_wvhi8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=748196821]
+position = Vector2(576, 320)
+shape = SubResource("RectangleShape2D_5746c")
+
+[node name="Clones_Sound" type="AudioStreamPlayer2D" parent="." unique_id=175162250]
+stream = ExtResource("3_wllkk")
+bus = &"SFX"

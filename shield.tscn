@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://dvsdt3dfv503l"]
+
+[ext_resource type="Script" uid="uid://bv58lftnjvcxr" path="res://shield.gd" id="1_ffst0"]
+[ext_resource type="Texture2D" uid="uid://dps06paj6h478" path="res://Screenshot 2026-08-01 164347.png" id="1_vuocu"]
+[ext_resource type="AudioStream" uid="uid://cd7kbe3r352u4" path="res://gargamel10-shielding-game-sound-effect-379733.mp3" id="3_dmnlx"]
+
+[sub_resource type="Shader" id="Shader_ffst0"]
+code = "shader_type canvas_item;
+
+void fragment() {
+    vec4 col = texture(TEXTURE, UV);
+    // If pixel is near white, make it transparent
+    if (col.r > 0.9 && col.g > 0.9 && col.b > 0.9) {
+        col.a = 0.0;
+    }
+    COLOR = col;
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dmnlx"]
+shader = SubResource("Shader_ffst0")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nsxlm"]
+size = Vector2(32, 32)
+
+[node name="Shield" type="Area2D" unique_id=1939885629]
+script = ExtResource("1_ffst0")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1674649635]
+material = SubResource("ShaderMaterial_dmnlx")
+position = Vector2(576, 320)
+scale = Vector2(0.046852134, 0.03980103)
+texture = ExtResource("1_vuocu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=907461225]
+position = Vector2(576, 320)
+shape = SubResource("RectangleShape2D_nsxlm")
+
+[node name="Shield_sound" type="AudioStreamPlayer2D" parent="." unique_id=774345083]
+stream = ExtResource("3_dmnlx")
+bus = &"SFX"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

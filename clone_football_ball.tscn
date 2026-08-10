@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://be0yyrtkfefhh"]
+
+[ext_resource type="Script" uid="uid://c52fuxbfv6vqr" path="res://clone_football_ball.gd" id="1_0mcsn"]
+[ext_resource type="Shader" uid="uid://bi100rlwuxexh" path="res://main_game.gdshader" id="2_0mcsn"]
+[ext_resource type="Texture2D" uid="uid://bx04lane1jj8a" path="res://Adobe Express 2026-08-06 12.25.54.png" id="3_enjsb"]
+[ext_resource type="AudioStream" uid="uid://tmk45uf8ifjl" path="res://mori_sound-fx-impact-ball-526576.mp3" id="3_x3jkl"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nqf8t"]
+shader = ExtResource("2_0mcsn")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sgjsl"]
+radius = 12.51
+
+[node name="Clone_Football_Ball" type="CharacterBody2D" unique_id=107716321]
+script = ExtResource("1_0mcsn")
+
+[node name="Clone_Ball_Color" type="Sprite2D" parent="." unique_id=309858252]
+material = SubResource("ShaderMaterial_nqf8t")
+position = Vector2(-5.293307e-07, -1.0000002)
+scale = Vector2(0.036876354, 0.036630034)
+texture = ExtResource("3_enjsb")
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1368217195]
+shape = SubResource("CircleShape2D_sgjsl")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1155262385]
+stream = ExtResource("3_x3jkl")
+bus = &"SFX"

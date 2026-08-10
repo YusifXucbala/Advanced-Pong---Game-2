@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://bx2prrckbv0s8"]
+
+[ext_resource type="Script" uid="uid://bnmyavvsq1mr0" path="res://clone_ball.gd" id="1_bitlg"]
+[ext_resource type="Shader" uid="uid://bi100rlwuxexh" path="res://main_game.gdshader" id="2_7sy2y"]
+[ext_resource type="AudioStream" uid="uid://tmk45uf8ifjl" path="res://mori_sound-fx-impact-ball-526576.mp3" id="3_fo6u6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nqf8t"]
+shader = ExtResource("2_7sy2y")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sgjsl"]
+radius = 12.51
+
+[node name="Clone_Ball" type="CharacterBody2D" unique_id=107716321]
+script = ExtResource("1_bitlg")
+
+[node name="Clone_Ball_Color" type="ColorRect" parent="." unique_id=585598777]
+material = SubResource("ShaderMaterial_nqf8t")
+offset_left = -12.0
+offset_top = -12.0
+offset_right = 12.0
+offset_bottom = 12.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1368217195]
+shape = SubResource("CircleShape2D_sgjsl")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1155262385]
+stream = ExtResource("3_fo6u6")
+bus = &"SFX"

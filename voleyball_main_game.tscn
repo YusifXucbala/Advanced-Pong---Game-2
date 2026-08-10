@@ -1,0 +1,644 @@
+[gd_scene format=3 uid="uid://bpswapvf6d7x4"]
+
+[ext_resource type="Script" uid="uid://cmmoyspwnrbad" path="res://voleyball_main_game.gd" id="1_bu16o"]
+[ext_resource type="PackedScene" uid="uid://dvsdt3dfv503l" path="res://shield.tscn" id="2_df8n1"]
+[ext_resource type="PackedScene" uid="uid://cof2704awyqtw" path="res://item.tscn" id="3_y0e5s"]
+[ext_resource type="PackedScene" uid="uid://bd6ywxk3iq4xd" path="res://invisibility.tscn" id="4_b04is"]
+[ext_resource type="Script" uid="uid://dxc7vneqo4w47" path="res://voleyball_ball.gd" id="4_gmrul"]
+[ext_resource type="PackedScene" uid="uid://de1elxxvkubtr" path="res://ice.tscn" id="5_uc1g5"]
+[ext_resource type="PackedScene" uid="uid://hhid547ipe2q" path="res://clones.tscn" id="6_62fs2"]
+[ext_resource type="Texture2D" uid="uid://c4rbuguxfkxri" path="res://Adobe Express 2026-08-08 14.54.58.png" id="6_bu16o"]
+[ext_resource type="Texture2D" uid="uid://bqldc4th3ed6f" path="res://Gemini_Generated_Image_ridal2ridal2rida.png" id="7_70fm1"]
+[ext_resource type="Script" uid="uid://dnxmacabfgf4q" path="res://vpaddle_1.gd" id="8_bu16o"]
+[ext_resource type="Script" uid="uid://cgb087vecdtk4" path="res://sound_effects.gd" id="8_iuecd"]
+[ext_resource type="Script" uid="uid://wibaxnvq2inc" path="res://vpaddle_2.gd" id="9_gmrul"]
+[ext_resource type="Shader" uid="uid://bi100rlwuxexh" path="res://main_game.gdshader" id="10_cyy5v"]
+[ext_resource type="AudioStream" uid="uid://bhmutrsqhbv6l" path="res://freesound_community-soccer-ball-kick-37625.mp3" id="12_yg2ue"]
+[ext_resource type="Script" uid="uid://bqi8y8pvk8qbu" path="res://left_block.gd" id="15_v5qft"]
+[ext_resource type="Script" uid="uid://dohu07amxn2ba" path="res://right_block.gd" id="16_i504e"]
+[ext_resource type="AudioStream" uid="uid://cx2x6kn2td7ve" path="res://floraphonic-arcade-ui-4-229502.mp3" id="17_sn4v1"]
+[ext_resource type="AudioStream" uid="uid://bnird5ycb47af" path="res://lucadialessandro-arcade-fx-288597.mp3" id="18_fun3b"]
+[ext_resource type="AudioStream" uid="uid://ckeg4wss47rtq" path="res://ks_mb-marble-it-up-ultra-soccer-win-sound-418896.mp3" id="19_f87nj"]
+[ext_resource type="AudioStream" uid="uid://bsd0ghbasn75j" path="res://universfield-marimba-game-over-250960.mp3" id="20_peee1"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yx7mw"]
+texture = ExtResource("7_70fm1")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1oj5k"]
+bg_color = Color(0.36862746, 0.5882353, 0.7294118, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yx7mw"]
+bg_color = Color(0.36862746, 0.5882353, 0.7294118, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ykeeq"]
+bg_color = Color(0.84595823, 0.8704602, 1, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6bm6p"]
+bg_color = Color(0.84595823, 0.8704602, 1, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dugkq"]
+bg_color = Color(0.36862746, 0.5882353, 0.7294118, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2pltu"]
+bg_color = Color(0.36862746, 0.5882353, 0.7294118, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f52ns"]
+bg_color = Color(0.36862746, 0.5882353, 0.7294118, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l5ukw"]
+bg_color = Color(0.36862746, 0.5882353, 0.7294118, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4srsv"]
+bg_color = Color(0.36862746, 0.5882353, 0.7294118, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aomqu"]
+bg_color = Color(0.38018888, 0.38018903, 0.38018897, 1)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mf81u"]
+bg_color = Color(0.36862746, 0.5882353, 0.7294118, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_02kkc"]
+bg_color = Color(0.7313315, 0.7313315, 0.7313314, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_mf81u"]
+color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_02kkc"]
+color = Color(0.36862746, 0.5882353, 0.7294118, 1)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_aomqu"]
+color = Color(0.36862746, 0.5882353, 0.7294118, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_krmtw"]
+bg_color = Color(0.38039216, 0.38039216, 0.38039216, 1)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4srsv"]
+shader = ExtResource("10_cyy5v")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mf81u"]
+radius = 12.51
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ykeeq"]
+size = Vector2(32.5, 96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6bm6p"]
+size = Vector2(1014, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dugkq"]
+size = Vector2(10, 502)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_02kkc"]
+size = Vector2(10, 502)
+
+[node name="Voleyball_main_game" type="Node2D" unique_id=1240880710]
+script = ExtResource("1_bu16o")
+item_scenes = Array[PackedScene]([ExtResource("6_62fs2"), ExtResource("5_uc1g5"), ExtResource("4_b04is"), ExtResource("3_y0e5s"), ExtResource("2_df8n1")])
+
+[node name="Background" type="Control" parent="." unique_id=2030462513]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1151.0
+offset_bottom = 646.0
+
+[node name="ColorRect" type="ColorRect" parent="Background" unique_id=1238230220]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.6929321
+offset_top = 4.6390076
+offset_right = -1.6928711
+offset_bottom = 4.639038
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.9231317, 0.9673222, 0.54955155, 1)
+
+[node name="Panel" type="Panel" parent="Background" unique_id=2099074655]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 64.0
+offset_top = -582.0
+offset_right = -63.0
+offset_bottom = -62.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_yx7mw")
+
+[node name="Button" type="Button" parent="Background" unique_id=1921860291]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 16.0
+offset_right = 42.0
+offset_bottom = 51.0
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 19
+theme_override_styles/normal = SubResource("StyleBoxFlat_1oj5k")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_yx7mw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ykeeq")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_6bm6p")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dugkq")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_2pltu")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_f52ns")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_l5ukw")
+theme_override_styles/focus = SubResource("StyleBoxFlat_4srsv")
+text = "ll"
+
+[node name="Line2D3" type="Line2D" parent="Background" unique_id=167325944]
+points = PackedVector2Array(64, 576, 1088, 576, 1088, 64, 64, 64)
+closed = true
+default_color = Color(0, 0, 0, 1)
+
+[node name="Pausing" type="Panel" parent="Background" unique_id=1233434446]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -255.5
+offset_top = -195.0
+offset_right = 256.5
+offset_bottom = 181.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_aomqu")
+
+[node name="Resume" type="Button" parent="Background/Pausing" unique_id=2092553940]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.009000001
+offset_left = -128.0
+offset_top = 104.0
+offset_right = 128.0
+offset_bottom = 164.616
+grow_horizontal = 2
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_mf81u")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_mf81u")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_02kkc")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_02kkc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mf81u")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_mf81u")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_mf81u")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_mf81u")
+theme_override_styles/focus = SubResource("StyleBoxFlat_mf81u")
+text = "Resume"
+
+[node name="Restart" type="Button" parent="Background/Pausing" unique_id=1716276285]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.009000001
+offset_left = -128.0
+offset_top = 200.0
+offset_right = 128.0
+offset_bottom = 260.616
+grow_horizontal = 2
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_mf81u")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_mf81u")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_02kkc")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_02kkc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mf81u")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_mf81u")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_mf81u")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_mf81u")
+theme_override_styles/focus = SubResource("StyleBoxFlat_mf81u")
+text = "Restart"
+
+[node name="BackToMenu" type="Button" parent="Background/Pausing" unique_id=1891723236]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.009000001
+offset_left = -128.0
+offset_top = 296.0
+offset_right = 128.0
+offset_bottom = 356.616
+grow_horizontal = 2
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 33
+theme_override_styles/normal = SubResource("StyleBoxFlat_mf81u")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_mf81u")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_02kkc")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_02kkc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mf81u")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_mf81u")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_mf81u")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_mf81u")
+theme_override_styles/focus = SubResource("StyleBoxFlat_mf81u")
+text = "Back To Menu"
+
+[node name="Label" type="Label" parent="Background/Pausing" unique_id=1507844015]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 48.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 36
+text = "Pause"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sound_Effects" type="HSlider" parent="Background/Pausing" unique_id=694633046]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 64.0
+offset_right = 384.0
+offset_bottom = 80.0
+theme_override_styles/slider = SubResource("StyleBoxLine_mf81u")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_02kkc")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_aomqu")
+max_value = 1.0
+step = 0.05
+value = 0.75
+script = ExtResource("8_iuecd")
+audio_bus_name = "SFX"
+
+[node name="Label2" type="Label" parent="Background/Pausing" unique_id=212574905]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.043
+offset_left = 16.0
+offset_top = 24.0
+offset_right = 116.0
+offset_bottom = 98.832
+theme_override_font_sizes/font_size = 31
+text = "Sound
+Effects"
+
+[node name="Final_Part" type="Panel" parent="Background" unique_id=983647514]
+visible = false
+layout_mode = 0
+offset_left = 320.0
+offset_top = 128.0
+offset_right = 832.0
+offset_bottom = 504.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_krmtw")
+
+[node name="Again_AI" type="Button" parent="Background/Final_Part" unique_id=1957726227]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.009000001
+offset_left = -128.0
+offset_top = 64.0
+offset_right = 129.0
+offset_bottom = 124.616
+grow_horizontal = 2
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_mf81u")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_mf81u")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_02kkc")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_02kkc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mf81u")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_mf81u")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_mf81u")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_mf81u")
+theme_override_styles/focus = SubResource("StyleBoxFlat_mf81u")
+text = "Play With AI"
+
+[node name="Again_Multiplayer" type="Button" parent="Background/Final_Part" unique_id=114923973]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.009000001
+offset_left = -128.0
+offset_top = 160.0
+offset_right = 128.0
+offset_bottom = 220.616
+grow_horizontal = 2
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 33
+theme_override_styles/normal = SubResource("StyleBoxFlat_mf81u")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_mf81u")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_02kkc")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_02kkc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mf81u")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_mf81u")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_mf81u")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_mf81u")
+theme_override_styles/focus = SubResource("StyleBoxFlat_mf81u")
+text = "Play Multiplayer
+"
+
+[node name="BackToMenu2" type="Button" parent="Background/Final_Part" unique_id=314748041]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.009000001
+offset_left = -128.0
+offset_top = 256.0
+offset_right = 128.0
+offset_bottom = 316.616
+grow_horizontal = 2
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 33
+theme_override_styles/normal = SubResource("StyleBoxFlat_mf81u")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_mf81u")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_02kkc")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_02kkc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mf81u")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_mf81u")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_mf81u")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_mf81u")
+theme_override_styles/focus = SubResource("StyleBoxFlat_mf81u")
+text = "Back To Menu"
+
+[node name="Label" type="Label" parent="Background/Final_Part" unique_id=1229582719]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 63.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 21
+text = "Player - 1 won. 
+Do you want to play again?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Voleyball_Ball" type="CharacterBody2D" parent="." unique_id=314783704]
+position = Vector2(576, 320)
+collision_mask = 3
+script = ExtResource("4_gmrul")
+
+[node name="Voleyball_Ball_Color" type="Sprite2D" parent="Voleyball_Ball" unique_id=25127858]
+material = SubResource("ShaderMaterial_4srsv")
+position = Vector2(9.775162e-06, -0.9999896)
+scale = Vector2(0.036876358, 0.036630053)
+texture = ExtResource("6_bu16o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Voleyball_Ball" unique_id=589828856]
+shape = SubResource("CircleShape2D_mf81u")
+
+[node name="Voleyball_Ball_Sound" type="AudioStreamPlayer2D" parent="Voleyball_Ball" unique_id=827953154]
+stream = ExtResource("12_yg2ue")
+bus = &"SFX"
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=83626516]
+offset_left = 59.307068
+offset_top = 58.639008
+offset_right = 69.30707
+offset_bottom = 68.63901
+color = Color(1, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=1342514137]
+offset_left = 1083.3071
+offset_top = 58.639008
+offset_right = 1093.3071
+offset_bottom = 68.63901
+color = Color(1, 0, 0, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="." unique_id=173885504]
+offset_left = 1083.3071
+offset_top = 570.63904
+offset_right = 1093.3071
+offset_bottom = 580.63904
+color = Color(1, 0, 0, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="." unique_id=1626033142]
+offset_left = 59.307068
+offset_top = 570.63904
+offset_right = 69.30707
+offset_bottom = 580.63904
+color = Color(1, 0, 0, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="." unique_id=1336862088]
+offset_left = 59.0
+offset_top = 69.0
+offset_right = 69.0
+offset_bottom = 571.0
+color = Color(0.5132329, 0.5132329, 0.5132329, 1)
+
+[node name="ColorRect6" type="ColorRect" parent="." unique_id=1855198087]
+offset_left = 1083.0
+offset_top = 69.0
+offset_right = 1093.0
+offset_bottom = 571.0
+color = Color(0.5132329, 0.5132329, 0.5132329, 1)
+
+[node name="Vpaddle1" type="StaticBody2D" parent="." unique_id=1737339844]
+position = Vector2(85, 320)
+collision_layer = 2
+script = ExtResource("8_bu16o")
+
+[node name="Vpaddle1_Color" type="ColorRect" parent="Vpaddle1" unique_id=803325171]
+offset_left = -16.0
+offset_top = -48.0
+offset_right = 16.0
+offset_bottom = 48.0
+color = Color(1, 0, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Vpaddle1" unique_id=711965260]
+shape = SubResource("RectangleShape2D_ykeeq")
+
+[node name="Vpaddle2" type="StaticBody2D" parent="." unique_id=1904006216]
+position = Vector2(1067, 320)
+collision_layer = 2
+script = ExtResource("9_gmrul")
+
+[node name="Vpaddle2_Color" type="ColorRect" parent="Vpaddle2" unique_id=1516939281]
+offset_left = -16.0
+offset_top = -48.0
+offset_right = 16.0
+offset_bottom = 48.0
+color = Color(1, 0, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Vpaddle2" unique_id=1755174466]
+shape = SubResource("RectangleShape2D_ykeeq")
+
+[node name="Borders" type="StaticBody2D" parent="." unique_id=764860293]
+collision_layer = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders" unique_id=1424415070]
+position = Vector2(576, 64)
+shape = SubResource("RectangleShape2D_6bm6p")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Borders" unique_id=266602500]
+position = Vector2(576, 576)
+shape = SubResource("RectangleShape2D_6bm6p")
+
+[node name="Left_Wall" type="Area2D" parent="." unique_id=1785436976]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Left_Wall" unique_id=1320547226]
+position = Vector2(64, 320)
+shape = SubResource("RectangleShape2D_dugkq")
+
+[node name="Right_Wall" type="Area2D" parent="." unique_id=682513165]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Right_Wall" unique_id=1284698118]
+position = Vector2(1088, 320)
+shape = SubResource("RectangleShape2D_dugkq")
+
+[node name="Scores" type="CanvasGroup" parent="." unique_id=1671650465]
+
+[node name="Score1" type="Label" parent="Scores" unique_id=2091761234]
+offset_left = 496.0
+offset_top = 64.0
+offset_right = 536.0
+offset_bottom = 118.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 39
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Score2" type="Label" parent="Scores" unique_id=249758435]
+offset_left = 616.0
+offset_top = 64.0
+offset_right = 656.0
+offset_bottom = 118.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 39
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Voleyball_Ball_Timer" type="Timer" parent="." unique_id=1043230001]
+one_shot = true
+autostart = true
+
+[node name="SpawnTimer" type="Timer" parent="." unique_id=127152654]
+wait_time = 7.255
+autostart = true
+
+[node name="Left_Block" type="StaticBody2D" parent="." unique_id=163283291]
+position = Vector2(0, -576)
+collision_layer = 2
+script = ExtResource("15_v5qft")
+
+[node name="ColorRect" type="ColorRect" parent="Left_Block" unique_id=2042819465]
+offset_left = 59.0
+offset_top = 69.0
+offset_right = 69.0
+offset_bottom = 571.0
+color = Color(0.2993521, 0.12218211, 0.013910413, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Left_Block" unique_id=1026419432]
+position = Vector2(64, 320)
+shape = SubResource("RectangleShape2D_02kkc")
+
+[node name="Right_Block" type="StaticBody2D" parent="." unique_id=793445399]
+position = Vector2(1024, -576)
+collision_layer = 2
+script = ExtResource("16_i504e")
+
+[node name="ColorRect" type="ColorRect" parent="Right_Block" unique_id=59005852]
+offset_left = 59.0
+offset_top = 69.0
+offset_right = 69.0
+offset_bottom = 571.0
+color = Color(0.29803923, 0.12156863, 0.015686275, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Right_Block" unique_id=1268727321]
+position = Vector2(64, 320)
+shape = SubResource("RectangleShape2D_02kkc")
+
+[node name="Getting_Point" type="AudioStreamPlayer2D" parent="." unique_id=184783331]
+stream = ExtResource("17_sn4v1")
+bus = &"SFX"
+
+[node name="Losing_Point" type="AudioStreamPlayer2D" parent="." unique_id=1469859724]
+stream = ExtResource("18_fun3b")
+bus = &"SFX"
+
+[node name="Win" type="AudioStreamPlayer2D" parent="." unique_id=543548772]
+stream = ExtResource("19_f87nj")
+bus = &"SFX"
+
+[node name="Lose" type="AudioStreamPlayer2D" parent="." unique_id=948149443]
+stream = ExtResource("20_peee1")
+bus = &"SFX"
+
+[connection signal="pressed" from="Background/Button" to="." method="_on_pause_pressed"]
+[connection signal="pressed" from="Background/Pausing/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Background/Pausing/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="Background/Pausing/BackToMenu" to="." method="_on_back_to_menu_pressed"]
+[connection signal="value_changed" from="Background/Pausing/Sound_Effects" to="Background/Pausing/Sound_Effects" method="_on_value_changed"]
+[connection signal="pressed" from="Background/Final_Part/Again_AI" to="." method="_on_again_ai_pressed"]
+[connection signal="pressed" from="Background/Final_Part/Again_Multiplayer" to="." method="_on_again_multiplayer_pressed"]
+[connection signal="pressed" from="Background/Final_Part/BackToMenu2" to="." method="_on_back_to_menu_2_pressed"]
+[connection signal="body_entered" from="Left_Wall" to="." method="_on_left_wall_body_entered"]
+[connection signal="body_entered" from="Right_Wall" to="." method="_on_right_wall_body_entered"]
+[connection signal="timeout" from="Voleyball_Ball_Timer" to="." method="_on_voleyball_ball_timer_timeout"]

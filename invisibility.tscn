@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://bd6ywxk3iq4xd"]
+
+[ext_resource type="Script" uid="uid://c3qbk3soaijpd" path="res://invisibility.gd" id="1_eudhu"]
+[ext_resource type="Shader" uid="uid://dkfj0tmn02hyc" path="res://new_shader.gdshader" id="1_hb4yy"]
+[ext_resource type="Texture2D" uid="uid://ddd7yj54sllju" path="res://Screenshot 2026-07-31 182631.png" id="2_eudhu"]
+[ext_resource type="AudioStream" uid="uid://bvjnkwft7bbgw" path="res://dragon-studio-pop-402324.mp3" id="4_ai0gv"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ai0gv"]
+shader = ExtResource("1_hb4yy")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1q3jf"]
+size = Vector2(32, 32)
+
+[node name="Invisibility" type="Area2D" unique_id=1516837994]
+script = ExtResource("1_eudhu")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2025185919]
+material = SubResource("ShaderMaterial_ai0gv")
+position = Vector2(576, 320)
+scale = Vector2(0.05245905, 0.055363335)
+texture = ExtResource("2_eudhu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=768784243]
+position = Vector2(576, 320)
+shape = SubResource("RectangleShape2D_1q3jf")
+
+[node name="Invisibility_Sound" type="AudioStreamPlayer2D" parent="." unique_id=2121595542]
+stream = ExtResource("4_ai0gv")
+bus = &"SFX"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://de1elxxvkubtr"]
+
+[ext_resource type="Script" uid="uid://df6mxw1uv6van" path="res://ice.gd" id="1_3inoc"]
+[ext_resource type="Shader" uid="uid://dkfj0tmn02hyc" path="res://new_shader.gdshader" id="1_lryxu"]
+[ext_resource type="Texture2D" uid="uid://c5t6dnkx2f0n" path="res://Screenshot 2026-07-29 151928.png" id="2_3inoc"]
+[ext_resource type="AudioStream" uid="uid://8vvnhvoeggde" path="res://freesound_community-ice-43072.mp3" id="4_wc2py"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wc2py"]
+shader = ExtResource("1_lryxu")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tbg4a"]
+size = Vector2(32, 32)
+
+[node name="Ice" type="Area2D" unique_id=1673037358]
+script = ExtResource("1_3inoc")
+freeze_duration = null
+lifetime = null
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=362107918]
+material = SubResource("ShaderMaterial_wc2py")
+position = Vector2(576, 320)
+scale = Vector2(0.081632696, 0.10256418)
+texture = ExtResource("2_3inoc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=459601100]
+position = Vector2(576, 320)
+shape = SubResource("RectangleShape2D_tbg4a")
+
+[node name="Ice_Sound" type="AudioStreamPlayer2D" parent="." unique_id=1722821040]
+stream = ExtResource("4_wc2py")
+bus = &"SFX"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

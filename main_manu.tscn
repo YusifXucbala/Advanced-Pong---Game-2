@@ -1,0 +1,428 @@
+[gd_scene format=3 uid="uid://df1fnetkqatpn"]
+
+[ext_resource type="Script" uid="uid://ddyp7r2w64m1e" path="res://main_manu.gd" id="1_daxml"]
+[ext_resource type="Texture2D" uid="uid://gfwon8iswbtp" path="res://Good Desktop Background Background.jpg" id="2_uwwrv"]
+[ext_resource type="AudioStream" uid="uid://bsvw4djjtai8i" path="res://alexzavesa-dance-playful-night-510786.mp3" id="3_6u1ow"]
+[ext_resource type="Script" uid="uid://c2j8ou5lps0io" path="res://fullscreen.gd" id="3_dstia"]
+[ext_resource type="Script" uid="uid://beo10ij7o7m6t" path="res://music.gd" id="5_qkpx6"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dstia"]
+texture = ExtResource("2_uwwrv")
+
+[sub_resource type="FontFile" id="FontFile_6u1ow"]
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/90/0/ascent = 0.0
+cache/0/90/0/descent = 0.0
+cache/0/90/0/underline_position = 0.0
+cache/0/90/0/underline_thickness = 0.0
+cache/0/90/0/scale = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qkpx6"]
+bg_color = Color(3.980413e-05, 0.17425323, 0.5499149, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n7o23"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sp5df"]
+bg_color = Color(3.980413e-05, 0.17425323, 0.5499149, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uwwrv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_53bxd"]
+bg_color = Color(0.38039216, 0.38039216, 0.38039216, 1)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dstia"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_6u1ow"]
+color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_qkpx6"]
+color = Color(0, 0.2, 0.9411765, 1)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_n7o23"]
+color = Color(0, 0, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v8lm8"]
+bg_color = Color(0.38039216, 0.38039216, 0.38039216, 1)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+
+[node name="MainManu" type="Control" unique_id=1855331977]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_daxml")
+
+[node name="Panel" type="Panel" parent="." unique_id=1586110781]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_dstia")
+
+[node name="Label" type="Label" parent="." unique_id=209134039]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -148.0
+offset_top = 37.0
+offset_right = 156.0
+offset_bottom = 158.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0.24200577, 0.3366048, 1)
+theme_override_fonts/font = SubResource("FontFile_6u1ow")
+theme_override_font_sizes/font_size = 90
+text = "Advanced Pong-Game 2"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1789203696]
+stream = ExtResource("3_6u1ow")
+autoplay = true
+bus = &"Music"
+
+[node name="Menu" type="VBoxContainer" parent="." unique_id=741994146]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -202.25
+offset_top = -128.75002
+offset_right = 202.25
+offset_bottom = 128.75002
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 13
+
+[node name="Button" type="Button" parent="Menu" unique_id=1872873745]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_qkpx6")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_qkpx6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n7o23")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_qkpx6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_sp5df")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_qkpx6")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_qkpx6")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_qkpx6")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_uwwrv")
+text = "Play "
+
+[node name="Button2" type="Button" parent="Menu" unique_id=199708903]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_qkpx6")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_qkpx6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n7o23")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_qkpx6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_sp5df")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_qkpx6")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_qkpx6")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_qkpx6")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_uwwrv")
+text = "Settings"
+
+[node name="Button3" type="Button" parent="Menu" unique_id=2131631283]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 63
+theme_override_styles/normal = SubResource("StyleBoxFlat_qkpx6")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_qkpx6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n7o23")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_qkpx6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_sp5df")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_qkpx6")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_qkpx6")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_qkpx6")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_uwwrv")
+text = "Exit"
+
+[node name="Settings" type="Panel" parent="." unique_id=162715323]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -344.0
+offset_top = -176.0
+offset_right = 343.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_53bxd")
+
+[node name="Label" type="Label" parent="Settings" unique_id=990573390]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 46.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 35
+text = "Settings"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Back" type="Button" parent="Settings" unique_id=606733259]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -202.0
+offset_top = -87.0
+offset_right = 202.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 63
+theme_override_styles/normal = SubResource("StyleBoxFlat_qkpx6")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_qkpx6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_dstia")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_qkpx6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_sp5df")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_qkpx6")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_qkpx6")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_qkpx6")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_uwwrv")
+text = "Back"
+
+[node name="Fullscreen" type="CheckButton" parent="Settings" unique_id=1554894211]
+layout_mode = 0
+offset_left = 138.0
+offset_top = 136.0
+offset_right = 546.0
+offset_bottom = 194.0
+theme_override_font_sizes/font_size = 30
+text = "Fullscreen"
+script = ExtResource("3_dstia")
+
+[node name="OptionButton" type="OptionButton" parent="Settings" unique_id=1702929339]
+layout_mode = 0
+offset_left = 351.0
+offset_top = 215.0
+offset_right = 545.0
+offset_bottom = 268.0
+selected = 0
+item_count = 4
+popup/item_0/text = "Simpe "
+popup/item_0/id = 0
+popup/item_1/text = "Football"
+popup/item_1/id = 1
+popup/item_2/text = "Basketball"
+popup/item_2/id = 2
+popup/item_3/text = "Voleyball"
+popup/item_3/id = 3
+
+[node name="Label2" type="Label" parent="Settings" unique_id=1130562238]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.094000004
+anchor_bottom = 0.09200001
+offset_left = 143.0
+offset_top = 219.0
+offset_right = 252.422
+offset_bottom = 231.40799
+theme_override_font_sizes/font_size = 28
+text = "Ball Type"
+vertical_alignment = 1
+
+[node name="Music" type="HSlider" parent="Settings" unique_id=1356888666]
+layout_mode = 0
+offset_left = 143.0
+offset_top = 73.0
+offset_right = 545.0
+offset_bottom = 97.0
+theme_override_styles/slider = SubResource("StyleBoxLine_6u1ow")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_qkpx6")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_n7o23")
+max_value = 1.0
+step = 0.05
+value = 0.75
+script = ExtResource("5_qkpx6")
+audio_bus_name = "Music"
+
+[node name="Label3" type="Label" parent="Settings" unique_id=1937242482]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 59.0
+offset_right = 126.0
+offset_bottom = 105.0
+theme_override_font_sizes/font_size = 33
+text = "Music: "
+
+[node name="Choice" type="Panel" parent="." unique_id=1126223703]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -344.0
+offset_top = -175.0
+offset_right = 348.0
+offset_bottom = 205.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_v8lm8")
+
+[node name="Label" type="Label" parent="Choice" unique_id=864609396]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 72.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 37
+text = "Choose The Game Mode"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AI" type="Button" parent="Choice" unique_id=1810916761]
+layout_mode = 0
+offset_left = 138.0
+offset_top = 95.0
+offset_right = 546.0
+offset_bottom = 198.74924
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_qkpx6")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_qkpx6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n7o23")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_qkpx6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_sp5df")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_qkpx6")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_qkpx6")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_qkpx6")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_uwwrv")
+text = "Play with AI"
+
+[node name="Multiplayer" type="Button" parent="Choice" unique_id=1993630174]
+layout_mode = 0
+offset_left = 143.0
+offset_top = 239.0
+offset_right = 546.0
+offset_bottom = 340.0
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_qkpx6")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_qkpx6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n7o23")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_qkpx6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_sp5df")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_qkpx6")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_qkpx6")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_qkpx6")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_uwwrv")
+text = "Play Multiplayer"
+
+[node name="Back2" type="Button" parent="Choice" unique_id=1753443062]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 243.0
+offset_top = -62.0
+offset_right = 330.0
+offset_bottom = -13.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_qkpx6")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_qkpx6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_dstia")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_qkpx6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_sp5df")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_qkpx6")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_qkpx6")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_qkpx6")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_uwwrv")
+text = "Back"
+
+[connection signal="pressed" from="Menu/Button" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Menu/Button2" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Menu/Button3" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Settings/Back" to="." method="_on_back_pressed"]
+[connection signal="toggled" from="Settings/Fullscreen" to="Settings/Fullscreen" method="_on_toggled"]
+[connection signal="value_changed" from="Settings/Music" to="Settings/Music" method="_on_value_changed"]
+[connection signal="pressed" from="Choice/AI" to="." method="_on_ai_pressed"]
+[connection signal="pressed" from="Choice/Multiplayer" to="." method="_on_multiplayer_pressed"]
+[connection signal="pressed" from="Choice/Back2" to="." method="_on_back_2_pressed"]

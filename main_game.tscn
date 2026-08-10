@@ -1,0 +1,695 @@
+[gd_scene format=3 uid="uid://2y4y3rq8q5kp"]
+
+[ext_resource type="Texture2D" uid="uid://cnej1lcvll0tr" path="res://1757.jpg" id="1_1oj5k"]
+[ext_resource type="Script" uid="uid://4wwpwer1qept" path="res://main_game.gd" id="1_yx7mw"]
+[ext_resource type="PackedScene" uid="uid://hhid547ipe2q" path="res://clones.tscn" id="2_aomqu"]
+[ext_resource type="Script" uid="uid://cgb087vecdtk4" path="res://sound_effects.gd" id="3_l5ukw"]
+[ext_resource type="PackedScene" uid="uid://de1elxxvkubtr" path="res://ice.tscn" id="3_qpaub"]
+[ext_resource type="Script" uid="uid://2k5ueyh6ufhn" path="res://paddle_1.gd" id="4_6bm6p"]
+[ext_resource type="PackedScene" uid="uid://bd6ywxk3iq4xd" path="res://invisibility.tscn" id="4_an1vu"]
+[ext_resource type="PackedScene" uid="uid://cof2704awyqtw" path="res://item.tscn" id="5_borgi"]
+[ext_resource type="Script" uid="uid://dxakha7fuqepc" path="res://paddle_2.gd" id="5_dugkq"]
+[ext_resource type="AudioStream" uid="uid://tmk45uf8ifjl" path="res://mori_sound-fx-impact-ball-526576.mp3" id="6_4srsv"]
+[ext_resource type="Script" uid="uid://dss1g8j8cl1sf" path="res://ball.gd" id="6_f52ns"]
+[ext_resource type="PackedScene" uid="uid://dvsdt3dfv503l" path="res://shield.tscn" id="6_ih6an"]
+[ext_resource type="Shader" uid="uid://bi100rlwuxexh" path="res://main_game.gdshader" id="7_l5ukw"]
+[ext_resource type="Script" uid="uid://bqi8y8pvk8qbu" path="res://left_block.gd" id="12_aomqu"]
+[ext_resource type="Script" uid="uid://dohu07amxn2ba" path="res://right_block.gd" id="13_krmtw"]
+[ext_resource type="AudioStream" uid="uid://cx2x6kn2td7ve" path="res://floraphonic-arcade-ui-4-229502.mp3" id="16_umrn2"]
+[ext_resource type="AudioStream" uid="uid://bnird5ycb47af" path="res://lucadialessandro-arcade-fx-288597.mp3" id="17_2i4tw"]
+[ext_resource type="AudioStream" uid="uid://ckeg4wss47rtq" path="res://ks_mb-marble-it-up-ultra-soccer-win-sound-418896.mp3" id="18_euc45"]
+[ext_resource type="AudioStream" uid="uid://bsd0ghbasn75j" path="res://universfield-marimba-game-over-250960.mp3" id="19_vn0ol"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yx7mw"]
+texture = ExtResource("1_1oj5k")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1oj5k"]
+bg_color = Color(0.1909172, 4.7168134e-05, 0.6915616, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yx7mw"]
+bg_color = Color(0.1909172, 4.7168134e-05, 0.6915616, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ykeeq"]
+bg_color = Color(0.84595823, 0.8704602, 1, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6bm6p"]
+bg_color = Color(0.84595823, 0.8704602, 1, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dugkq"]
+bg_color = Color(0.1909172, 4.7168134e-05, 0.6915616, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2pltu"]
+bg_color = Color(0.1909172, 4.7168134e-05, 0.6915616, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f52ns"]
+bg_color = Color(0.1909172, 4.7168134e-05, 0.6915616, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l5ukw"]
+bg_color = Color(0.1909172, 4.7168134e-05, 0.6915616, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4srsv"]
+bg_color = Color(0.1909172, 4.7168134e-05, 0.6915616, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="GDScript" id="GDScript_yx7mw"]
+script/source = "@tool # Allows you to see the circle inside the editor
+extends Line2D
+
+@export var radius: float = 100.0:
+	set(value):
+		radius = value
+		queue_redraw()
+
+@export var point_count: int = 64: # Higher numbers mean a smoother circle
+	set(value):
+		point_count = max(3, value) # A circle needs at least 3 points
+		queue_redraw()
+
+func _draw() -> void:
+	var circle_points = PackedVector2Array()
+	
+	for i in range(point_count + 1):
+		# Calculate the angle for each point around the circle
+		var angle = (i * TAU) / point_count
+		# Convert the angle to a position vector and scale by the radius
+		var point_position = Vector2(cos(angle), sin(angle)) * radius
+		circle_points.append(point_position)
+		
+	points = circle_points
+"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aomqu"]
+bg_color = Color(0.38018888, 0.38018903, 0.38018897, 1)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mf81u"]
+bg_color = Color(0.15998977, 1.5305579e-05, 0.6493141, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_02kkc"]
+bg_color = Color(0.7313315, 0.7313315, 0.7313314, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_mf81u"]
+color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_02kkc"]
+color = Color(0, 0.2, 0.9411765, 1)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_aomqu"]
+color = Color(0, 0.2, 0.9411765, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_krmtw"]
+bg_color = Color(0.38039216, 0.38039216, 0.38039216, 1)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4srsv"]
+shader = ExtResource("7_l5ukw")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mf81u"]
+radius = 12.51
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ykeeq"]
+size = Vector2(32.5, 96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6bm6p"]
+size = Vector2(1014, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dugkq"]
+size = Vector2(10, 502)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_02kkc"]
+size = Vector2(10, 502)
+
+[node name="MainGame" type="Node2D" unique_id=1240880710]
+script = ExtResource("1_yx7mw")
+item_scenes = Array[PackedScene]([ExtResource("2_aomqu"), ExtResource("3_qpaub"), ExtResource("4_an1vu"), ExtResource("5_borgi"), ExtResource("6_ih6an")])
+
+[node name="Background" type="Control" parent="." unique_id=2030462513]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1151.0
+offset_bottom = 646.0
+
+[node name="ColorRect" type="ColorRect" parent="Background" unique_id=1238230220]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.6929321
+offset_top = 4.6390076
+offset_right = -1.6928711
+offset_bottom = 4.639038
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.6754556, 0.70301497, 0.68743575, 1)
+
+[node name="Panel" type="Panel" parent="Background" unique_id=2099074655]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 64.0
+offset_top = -582.0
+offset_right = -66.0
+offset_bottom = -70.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_yx7mw")
+
+[node name="Button" type="Button" parent="Background" unique_id=1921860291]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 8.0
+offset_right = 44.0
+offset_bottom = 43.0
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 19
+theme_override_styles/normal = SubResource("StyleBoxFlat_1oj5k")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_yx7mw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ykeeq")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_6bm6p")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dugkq")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_2pltu")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_f52ns")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_l5ukw")
+theme_override_styles/focus = SubResource("StyleBoxFlat_4srsv")
+text = "ll"
+
+[node name="Circle" type="Line2D" parent="Background" unique_id=985629900]
+position = Vector2(576.8145, 322.9893)
+points = PackedVector2Array(90, 0, 89.90807, 4.066864, 89.632454, 8.125421, 89.17374, 12.167376, 88.53284, 16.184475, 87.71107, 20.16851, 86.71011, 24.111343, 85.532005, 28.004915, 84.17917, 31.841276, 82.654366, 35.612587, 80.96069, 39.311146, 79.10162, 42.92939, 77.080956, 46.459938, 74.902824, 49.89556, 72.57166, 53.22926, 70.09224, 56.454212, 67.46963, 59.563828, 64.709175, 62.551765, 61.81652, 65.4119, 58.79759, 68.13841, 55.65853, 70.72572, 52.405766, 73.16854, 49.04594, 75.46188, 45.58592, 77.60105, 42.032764, 79.581696, 38.39374, 81.39976, 34.67628, 83.05152, 30.887981, 84.53362, 27.036575, 85.84302, 23.129938, 86.97704, 19.176046, 87.93338, 15.182981, 88.710075, 11.1588955, 89.30554, 7.112014, 89.71856, 3.0506027, 89.94828, -1.0170407, 89.994255, -5.0826063, 89.85637, -9.137789, 89.53491, -13.174303, 89.03054, -17.183903, 88.34429, -21.158396, 87.477554, -25.089664, 86.432106, -28.969679, 85.210075, -32.79051, 83.81398, -36.544346, 82.24664, -40.223526, 80.51129, -43.820534, 78.61145, -47.32802, 76.55102, -50.73881, 74.3342, -54.04595, 71.965515, -57.24268, 69.44981, -60.322464, 66.79222, -63.279015, 63.998177, -66.10628, 61.073395, -68.79851, 58.02384, -71.350174, 54.855743, -73.75608, 51.575584, -76.01131, 48.19006, -78.111244, 44.70608, -80.051605, 41.13077, -81.82842, 37.471436, -83.43808, 33.73555, -84.87727, 29.93074, -86.14306, 26.064785, -87.232864, 22.14558, -88.14446, 18.181135, -88.875984, 14.179546, -89.425934, 10.14899, -89.7932, 6.0976996, -89.97701, 2.0339515, -89.97701, -2.0339515, -89.7932, -6.0976996, -89.425934, -10.14899, -88.875984, -14.179546, -88.14446, -18.181135, -87.232864, -22.14558, -86.14306, -26.064785, -84.87727, -29.93074, -83.43808, -33.73555, -81.82842, -37.471436, -80.051605, -41.13077, -78.111244, -44.70608, -76.01131, -48.19006, -73.75608, -51.575584, -71.350174, -54.855743, -68.79851, -58.02384, -66.10628, -61.073395, -63.279015, -63.998177, -60.322464, -66.79222, -57.24268, -69.44981, -54.04595, -71.965515, -50.73881, -74.3342, -47.32802, -76.55102, -43.820534, -78.61145, -40.223526, -80.51129, -36.544346, -82.24664, -32.79051, -83.81398, -28.969679, -85.210075, -25.089664, -86.432106, -21.158396, -87.477554, -17.183903, -88.34429, -13.174303, -89.03054, -9.137789, -89.53491, -5.0826063, -89.85637, -1.0170407, -89.994255, 3.0506027, -89.94828, 7.112014, -89.71856, 11.1588955, -89.30554, 15.182981, -88.710075, 19.176046, -87.93338, 23.129938, -86.97704, 27.036575, -85.84302, 30.887981, -84.53362, 34.67628, -83.05152, 38.39374, -81.39976, 42.032764, -79.581696, 45.58592, -77.60105, 49.04594, -75.46188, 52.405766, -73.16854, 55.65853, -70.72572, 58.79759, -68.13841, 61.81652, -65.4119, 64.709175, -62.551765, 67.46963, -59.563828, 70.09224, -56.454212, 72.57166, -53.22926, 74.902824, -49.89556, 77.080956, -46.459938, 79.10162, -42.92939, 80.96069, -39.311146, 82.654366, -35.612587, 84.17917, -31.841276, 85.532005, -28.004915, 86.71011, -24.111343, 87.71107, -20.16851, 88.53284, -16.184475, 89.17374, -12.167376, 89.632454, -8.125421, 89.90807, -4.066864, 90, -2.2042914e-14)
+closed = true
+default_color = Color(0.9019608, 0.10980392, 0, 1)
+script = SubResource("GDScript_yx7mw")
+radius = 90.0
+point_count = 139
+
+[node name="Line2D" type="Line2D" parent="Background" unique_id=461848804]
+position = Vector2(0, 29.86666)
+scale = Vector2(1, 0.90666676)
+points = PackedVector2Array(576, 37.647064, 576, 602.3529)
+closed = true
+width = 16.0
+default_color = Color(0.9006667, 0.109692134, 7.70092e-07, 1)
+
+[node name="Line2D2" type="Line2D" parent="Background" unique_id=90577845]
+points = PackedVector2Array(568, 576, 584, 576, 584, 64, 568, 64)
+closed = true
+width = 3.0
+default_color = Color(0, 0, 0, 1)
+
+[node name="Line2D3" type="Line2D" parent="Background" unique_id=167325944]
+points = PackedVector2Array(64, 576, 1088, 576, 1088, 64, 64, 64)
+closed = true
+default_color = Color(0, 0, 0, 1)
+
+[node name="Pausing" type="Panel" parent="Background" unique_id=1233434446]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -255.5
+offset_top = -195.0
+offset_right = 256.5
+offset_bottom = 181.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_aomqu")
+
+[node name="Resume" type="Button" parent="Background/Pausing" unique_id=2092553940]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.009000001
+offset_left = -128.0
+offset_top = 104.0
+offset_right = 128.0
+offset_bottom = 164.616
+grow_horizontal = 2
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_mf81u")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_mf81u")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_02kkc")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_02kkc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mf81u")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_mf81u")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_mf81u")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_mf81u")
+theme_override_styles/focus = SubResource("StyleBoxFlat_mf81u")
+text = "Resume"
+
+[node name="Restart" type="Button" parent="Background/Pausing" unique_id=1716276285]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.009000001
+offset_left = -128.0
+offset_top = 200.0
+offset_right = 128.0
+offset_bottom = 260.616
+grow_horizontal = 2
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_mf81u")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_mf81u")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_02kkc")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_02kkc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mf81u")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_mf81u")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_mf81u")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_mf81u")
+theme_override_styles/focus = SubResource("StyleBoxFlat_mf81u")
+text = "Restart"
+
+[node name="BackToMenu" type="Button" parent="Background/Pausing" unique_id=1891723236]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.009000001
+offset_left = -128.0
+offset_top = 296.0
+offset_right = 128.0
+offset_bottom = 356.616
+grow_horizontal = 2
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 33
+theme_override_styles/normal = SubResource("StyleBoxFlat_mf81u")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_mf81u")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_02kkc")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_02kkc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mf81u")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_mf81u")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_mf81u")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_mf81u")
+theme_override_styles/focus = SubResource("StyleBoxFlat_mf81u")
+text = "Back To Menu"
+
+[node name="Label" type="Label" parent="Background/Pausing" unique_id=1507844015]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 48.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 36
+text = "Pause"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sound_Effects" type="HSlider" parent="Background/Pausing" unique_id=694633046]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 64.0
+offset_right = 384.0
+offset_bottom = 80.0
+theme_override_styles/slider = SubResource("StyleBoxLine_mf81u")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_02kkc")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_aomqu")
+max_value = 1.0
+step = 0.05
+value = 0.75
+script = ExtResource("3_l5ukw")
+audio_bus_name = "SFX"
+
+[node name="Label2" type="Label" parent="Background/Pausing" unique_id=212574905]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.043
+offset_left = 16.0
+offset_top = 24.0
+offset_right = 116.0
+offset_bottom = 98.832
+theme_override_font_sizes/font_size = 31
+text = "Sound
+Effects"
+
+[node name="Final_Part" type="Panel" parent="Background" unique_id=983647514]
+visible = false
+layout_mode = 0
+offset_left = 320.0
+offset_top = 128.0
+offset_right = 832.0
+offset_bottom = 504.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_krmtw")
+
+[node name="Again_AI" type="Button" parent="Background/Final_Part" unique_id=1957726227]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.009000001
+offset_left = -128.0
+offset_top = 64.0
+offset_right = 129.0
+offset_bottom = 124.616
+grow_horizontal = 2
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_mf81u")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_mf81u")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_02kkc")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_02kkc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mf81u")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_mf81u")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_mf81u")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_mf81u")
+theme_override_styles/focus = SubResource("StyleBoxFlat_mf81u")
+text = "Play With AI"
+
+[node name="Again_Multiplayer" type="Button" parent="Background/Final_Part" unique_id=114923973]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.009000001
+offset_left = -128.0
+offset_top = 160.0
+offset_right = 128.0
+offset_bottom = 220.616
+grow_horizontal = 2
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 33
+theme_override_styles/normal = SubResource("StyleBoxFlat_mf81u")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_mf81u")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_02kkc")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_02kkc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mf81u")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_mf81u")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_mf81u")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_mf81u")
+theme_override_styles/focus = SubResource("StyleBoxFlat_mf81u")
+text = "Play Multiplayer
+"
+
+[node name="BackToMenu2" type="Button" parent="Background/Final_Part" unique_id=314748041]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.009000001
+offset_left = -128.0
+offset_top = 256.0
+offset_right = 128.0
+offset_bottom = 316.616
+grow_horizontal = 2
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 33
+theme_override_styles/normal = SubResource("StyleBoxFlat_mf81u")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_mf81u")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_02kkc")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_02kkc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mf81u")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_mf81u")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_mf81u")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_mf81u")
+theme_override_styles/focus = SubResource("StyleBoxFlat_mf81u")
+text = "Back To Menu"
+
+[node name="Label" type="Label" parent="Background/Final_Part" unique_id=1229582719]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 63.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 21
+text = "Player - 1 won. 
+Do you want to play again?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Ball" type="CharacterBody2D" parent="." unique_id=314783704]
+position = Vector2(576, 320)
+collision_mask = 3
+script = ExtResource("6_f52ns")
+
+[node name="Ball_Color" type="ColorRect" parent="Ball" unique_id=1564802036]
+material = SubResource("ShaderMaterial_4srsv")
+offset_left = -12.0
+offset_top = -12.0
+offset_right = 12.0
+offset_bottom = 12.0
+color = Color(0, 0, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball" unique_id=589828856]
+shape = SubResource("CircleShape2D_mf81u")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Ball" unique_id=827953154]
+stream = ExtResource("6_4srsv")
+bus = &"SFX"
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=83626516]
+offset_left = 59.307068
+offset_top = 58.639008
+offset_right = 69.30707
+offset_bottom = 68.63901
+color = Color(0.9019608, 0.10980392, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=1342514137]
+offset_left = 1083.3071
+offset_top = 58.639008
+offset_right = 1093.3071
+offset_bottom = 68.63901
+color = Color(0.9019608, 0.10980392, 0, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="." unique_id=173885504]
+offset_left = 1083.3071
+offset_top = 570.63904
+offset_right = 1093.3071
+offset_bottom = 580.63904
+color = Color(0.9019608, 0.10980392, 0, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="." unique_id=1626033142]
+offset_left = 59.307068
+offset_top = 570.63904
+offset_right = 69.30707
+offset_bottom = 580.63904
+color = Color(0.9019608, 0.10980392, 0, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="." unique_id=1336862088]
+offset_left = 59.0
+offset_top = 69.0
+offset_right = 69.0
+offset_bottom = 571.0
+color = Color(0.5132329, 0.5132329, 0.5132329, 1)
+
+[node name="ColorRect6" type="ColorRect" parent="." unique_id=1855198087]
+offset_left = 1083.0
+offset_top = 69.0
+offset_right = 1093.0
+offset_bottom = 571.0
+color = Color(0.5132329, 0.5132329, 0.5132329, 1)
+
+[node name="Paddle1" type="StaticBody2D" parent="." unique_id=1737339844]
+position = Vector2(85, 320)
+collision_layer = 2
+script = ExtResource("4_6bm6p")
+
+[node name="Paddle1_Color" type="ColorRect" parent="Paddle1" unique_id=803325171]
+offset_left = -16.0
+offset_top = -48.0
+offset_right = 16.0
+offset_bottom = 48.0
+color = Color(0, 0, 1, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Paddle1" unique_id=711965260]
+shape = SubResource("RectangleShape2D_ykeeq")
+
+[node name="Paddle2" type="StaticBody2D" parent="." unique_id=1904006216]
+position = Vector2(1067, 320)
+collision_layer = 2
+script = ExtResource("5_dugkq")
+
+[node name="Paddle2_Color" type="ColorRect" parent="Paddle2" unique_id=1516939281]
+offset_left = -16.0
+offset_top = -48.0
+offset_right = 16.0
+offset_bottom = 48.0
+color = Color(0.6003794, 1.4439225e-06, 4.3317675e-07, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Paddle2" unique_id=1755174466]
+shape = SubResource("RectangleShape2D_ykeeq")
+
+[node name="Borders" type="StaticBody2D" parent="." unique_id=764860293]
+collision_layer = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders" unique_id=1424415070]
+position = Vector2(576, 64)
+shape = SubResource("RectangleShape2D_6bm6p")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Borders" unique_id=266602500]
+position = Vector2(576, 576)
+shape = SubResource("RectangleShape2D_6bm6p")
+
+[node name="Left_Wall" type="Area2D" parent="." unique_id=1785436976]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Left_Wall" unique_id=1320547226]
+position = Vector2(64, 320)
+shape = SubResource("RectangleShape2D_dugkq")
+
+[node name="Right_Wall" type="Area2D" parent="." unique_id=682513165]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Right_Wall" unique_id=1284698118]
+position = Vector2(1088, 320)
+shape = SubResource("RectangleShape2D_dugkq")
+
+[node name="Scores" type="CanvasGroup" parent="." unique_id=1671650465]
+
+[node name="Score1" type="Label" parent="Scores" unique_id=2091761234]
+offset_left = 496.0
+offset_top = 64.0
+offset_right = 536.0
+offset_bottom = 118.0
+theme_override_colors/font_color = Color(0.9019608, 0.10980392, 0, 1)
+theme_override_font_sizes/font_size = 39
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Score2" type="Label" parent="Scores" unique_id=249758435]
+offset_left = 616.0
+offset_top = 64.0
+offset_right = 656.0
+offset_bottom = 118.0
+theme_override_colors/font_color = Color(0.9019608, 0.10980392, 0, 1)
+theme_override_font_sizes/font_size = 39
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BallTimer" type="Timer" parent="." unique_id=1043230001]
+one_shot = true
+autostart = true
+
+[node name="SpawnTimer" type="Timer" parent="." unique_id=127152654]
+wait_time = 7.063000000000001
+autostart = true
+
+[node name="Left_Block" type="StaticBody2D" parent="." unique_id=163283291]
+position = Vector2(0, -576)
+collision_layer = 2
+script = ExtResource("12_aomqu")
+
+[node name="ColorRect" type="ColorRect" parent="Left_Block" unique_id=2042819465]
+offset_left = 59.0
+offset_top = 69.0
+offset_right = 69.0
+offset_bottom = 571.0
+color = Color(0.2993521, 0.12218211, 0.013910413, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Left_Block" unique_id=1026419432]
+position = Vector2(64, 320)
+shape = SubResource("RectangleShape2D_02kkc")
+
+[node name="Right_Block" type="StaticBody2D" parent="." unique_id=793445399]
+position = Vector2(1024, -576)
+collision_layer = 2
+script = ExtResource("13_krmtw")
+
+[node name="ColorRect" type="ColorRect" parent="Right_Block" unique_id=59005852]
+offset_left = 59.0
+offset_top = 69.0
+offset_right = 69.0
+offset_bottom = 571.0
+color = Color(0.29803923, 0.12156863, 0.015686275, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Right_Block" unique_id=1268727321]
+position = Vector2(64, 320)
+shape = SubResource("RectangleShape2D_02kkc")
+
+[node name="Getting_Point" type="AudioStreamPlayer2D" parent="." unique_id=2137157556]
+stream = ExtResource("16_umrn2")
+bus = &"SFX"
+
+[node name="Losing_Point" type="AudioStreamPlayer2D" parent="." unique_id=1892717394]
+stream = ExtResource("17_2i4tw")
+bus = &"SFX"
+
+[node name="Win" type="AudioStreamPlayer2D" parent="." unique_id=1638073302]
+stream = ExtResource("18_euc45")
+bus = &"SFX"
+
+[node name="Lose" type="AudioStreamPlayer2D" parent="." unique_id=299266172]
+stream = ExtResource("19_vn0ol")
+bus = &"SFX"
+
+[connection signal="pressed" from="Background/Button" to="." method="_on_pause_pressed"]
+[connection signal="pressed" from="Background/Pausing/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Background/Pausing/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="Background/Pausing/BackToMenu" to="." method="_on_back_to_menu_pressed"]
+[connection signal="value_changed" from="Background/Pausing/Sound_Effects" to="Background/Pausing/Sound_Effects" method="_on_value_changed"]
+[connection signal="pressed" from="Background/Final_Part/Again_AI" to="." method="_on_again_ai_pressed"]
+[connection signal="pressed" from="Background/Final_Part/Again_Multiplayer" to="." method="_on_again_multiplayer_pressed"]
+[connection signal="pressed" from="Background/Final_Part/BackToMenu2" to="." method="_on_back_to_menu_2_pressed"]
+[connection signal="body_entered" from="Left_Wall" to="." method="_on_left_wall_body_entered"]
+[connection signal="body_entered" from="Right_Wall" to="." method="_on_right_wall_body_entered"]
+[connection signal="timeout" from="BallTimer" to="." method="_on_ball_timer_timeout"]
