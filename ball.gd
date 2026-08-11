@@ -22,7 +22,14 @@ func _ready():
 
 func new_ball():
 	while main_game.paus:
+		
+		if not is_inside_tree():
+			return
+			
 		await get_tree().process_frame
+		
+		if not is_inside_tree():
+			return
 	
 	deactivate_speed_boost()
 	make_visible()
