@@ -19,6 +19,7 @@ extends Node2D
 
 
 
+
 var score = [0, 0] # Fixed: Starts at 0
 var speed_of_ball: float = 400.0 # Default fallback speed
 const paddle_speed: int = 500
@@ -61,6 +62,8 @@ func _on_pause_pressed() -> void:
 		speed_of_ball = $Ball.speed
 	$Ball.speed = 0
 	
+	
+	
 	spawn_timer.paused = true
 
 func _on_resume_pressed() -> void:
@@ -68,6 +71,7 @@ func _on_resume_pressed() -> void:
 	pausing.visible = false
 	$Ball.speed = speed_of_ball
 	spawn_timer.paused = false
+	
 
 # --- GAME RESTART / RESET ---
 
@@ -80,6 +84,7 @@ func reset_game_state() -> void:
 	spawn_timer.paused = false
 	final_part.visible = false
 	pausing.visible = false
+	
 	
 	$Scores/Score1.text = "0"
 	$Scores/Score2.text = "0"
@@ -131,9 +136,9 @@ func trigger_win(is_ai: bool, ai_text: String, p2_text: String) -> void:
 	paus = true
 	spawn_timer.paused = true
 	final_part.visible = true
-	if $Ball.speed > 0:
-		speed_of_ball = $Ball.speed
-	$Ball.speed = 0
+	
+	speed_of_ball = $Ball.speed
+	
 	label.text = ai_text if is_ai else p2_text
 
 # --- BUTTON HANDLERS ---

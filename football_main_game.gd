@@ -134,9 +134,9 @@ func trigger_win(is_ai: bool, ai_text: String, p2_text: String) -> void:
 	paus = true
 	spawn_timer.paused = true
 	final_part.visible = true
-	if $Football_Ball.speed > 0:
-		speed_of_ball = $Football_Ball.speed
-	$Football_Ball.speed = 0 # Fixed typo ($Football_Ball)
+	
+	speed_of_ball = $Football_Ball.speed
+	
 	label.text = ai_text if is_ai else p2_text
 
 # --- BUTTON HANDLERS ---

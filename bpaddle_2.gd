@@ -71,6 +71,6 @@ func freeze(duration: float = 2.0) -> void:
 	await get_tree().create_timer(duration).timeout
 	
 	
-	bpaddle_2_color.color = Color("943b00")
+	bpaddle_2_color.color = Color("6e0051")
 	is_frozen = false
 	

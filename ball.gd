@@ -96,15 +96,16 @@ func new_direction(collider, collision):
 func activate_speed_boost() -> void:
 	if not is_speed_boosted:
 		is_speed_boosted = true
-		speed *= 2.0
+		speed *= 1.5
 		
-		ball_color.color = Color.CRIMSON
+		if not made_invisible:
+			ball_color.color = Color.CRIMSON
 
 
 func deactivate_speed_boost() -> void:
 	if is_speed_boosted:
 		is_speed_boosted = false
-		speed /= 2.0 
+		speed /= 1.5
 		
 		ball_color.color = Color("000000")
 		

@@ -157,7 +157,7 @@ shader = ExtResource("7_l5ukw")
 radius = 12.51
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ykeeq"]
-size = Vector2(32.5, 96)
+size = Vector2(21, 96)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6bm6p"]
 size = Vector2(1014, 10)
@@ -257,6 +257,7 @@ default_color = Color(0, 0, 0, 1)
 
 [node name="Pausing" type="Panel" parent="Background" unique_id=1233434446]
 visible = false
+top_level = true
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -389,6 +390,7 @@ Effects"
 
 [node name="Final_Part" type="Panel" parent="Background" unique_id=983647514]
 visible = false
+top_level = true
 layout_mode = 0
 offset_left = 320.0
 offset_top = 128.0
@@ -555,13 +557,14 @@ collision_layer = 2
 script = ExtResource("4_6bm6p")
 
 [node name="Paddle1_Color" type="ColorRect" parent="Paddle1" unique_id=803325171]
-offset_left = -16.0
+offset_left = -5.0
 offset_top = -48.0
 offset_right = 16.0
 offset_bottom = 48.0
 color = Color(0, 0, 1, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Paddle1" unique_id=711965260]
+position = Vector2(5.625, 0)
 shape = SubResource("RectangleShape2D_ykeeq")
 
 [node name="Paddle2" type="StaticBody2D" parent="." unique_id=1904006216]
@@ -572,11 +575,12 @@ script = ExtResource("5_dugkq")
 [node name="Paddle2_Color" type="ColorRect" parent="Paddle2" unique_id=1516939281]
 offset_left = -16.0
 offset_top = -48.0
-offset_right = 16.0
+offset_right = 5.0
 offset_bottom = 48.0
 color = Color(0.6003794, 1.4439225e-06, 4.3317675e-07, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Paddle2" unique_id=1755174466]
+position = Vector2(-5.5, 0)
 shape = SubResource("RectangleShape2D_ykeeq")
 
 [node name="Borders" type="StaticBody2D" parent="." unique_id=764860293]
@@ -593,13 +597,13 @@ shape = SubResource("RectangleShape2D_6bm6p")
 [node name="Left_Wall" type="Area2D" parent="." unique_id=1785436976]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Left_Wall" unique_id=1320547226]
-position = Vector2(64, 320)
+position = Vector2(48, 320)
 shape = SubResource("RectangleShape2D_dugkq")
 
 [node name="Right_Wall" type="Area2D" parent="." unique_id=682513165]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Right_Wall" unique_id=1284698118]
-position = Vector2(1088, 320)
+position = Vector2(1104, 320)
 shape = SubResource("RectangleShape2D_dugkq")
 
 [node name="Scores" type="CanvasGroup" parent="." unique_id=1671650465]

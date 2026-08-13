@@ -550,7 +550,7 @@ offset_top = 61.0
 offset_right = 1028.0
 offset_bottom = 97.0
 theme_override_font_sizes/font_size = 21
-text = "-- Speed Booster gives the ball 2x speed until the ball passes the wall or hits the paddle."
+text = "-- Speed Booster gives the ball 1.5x speed until the ball passes the wall or hits the paddle."
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -583,7 +583,7 @@ offset_top = 216.0
 offset_right = 1027.0
 offset_bottom = 252.0
 theme_override_font_sizes/font_size = 16
-text = "-- Magical Ice makes the ball invisible until the ball passes the walls or the ball hits the paddle. ( This is a new item)"
+text = "-- Magical Eye makes the ball invisible until the ball passes the walls or the ball hits the paddle. ( This is a new item)"
 horizontal_alignment = 1
 vertical_alignment = 1
 

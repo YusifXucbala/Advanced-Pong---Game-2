@@ -88,8 +88,8 @@ func reset_game_state() -> void:
 	
 	get_tree().call_group("Items", "queue_free")
 	
-	if speed_of_ball > 0:
-		$Voleyball_Ball.speed = speed_of_ball
+	speed_of_ball = $Voleyball_Ball.speed
+	
 	$Voleyball_Ball.new_ball()
 
 # --- GOAL DETECTORS ---
